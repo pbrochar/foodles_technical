@@ -7,7 +7,6 @@ def words_frequency(sentence: str, n: int) -> List[Tuple[str, int]]:
     This list should is sort by decreasing frequency and alphabetical order in case of tie.
     """
 
-
     splitted_sentence = sentence.split()
     splitted_sentence.sort()
     return Counter(splitted_sentence).most_common(n)
