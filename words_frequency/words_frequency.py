@@ -1,5 +1,4 @@
 from typing import List, Tuple
-import operator
 
 
 def words_frequency(sentence: str, n: int) -> List[Tuple[str, int]]:
@@ -14,5 +13,6 @@ def words_frequency(sentence: str, n: int) -> List[Tuple[str, int]]:
     unique_words = set(splitted_sentence)
 
     count = [(word, splitted_sentence.count(word)) for word in unique_words]
-    count.sort(reverse=True, key=lambda a: (a[1], a[0]))
+
+    count.sort(key=lambda a: (-a[1], a[0]))
     return count[0:n]
